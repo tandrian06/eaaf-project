@@ -18,6 +18,12 @@ Start with a reviewed YAML description of one HTTP container. The DevOps CLI rea
 
 [Explore the DevOps generator](https://github.com/tandrian06/eaaf-devops#readme) · [View the deployment example](https://github.com/tandrian06/eaaf-deployment-demo#readme) (GitHub access required while this repository is private)
 
+### AI for Ops · ECS incident diagnosis
+
+Replay saved ECS events to see why a container could not start or why a task ran out of memory. The CLI reports the probable cause, the matching evidence, and the next check. It can also collect evidence from AWS ECS using a read-only profile. An explanation through the EAAF Gateway is optional.
+
+[Try AI for Ops locally](https://github.com/tandrian06/eaaf-ops#readme)
+
 ## How the repositories fit together
 
 ```mermaid
@@ -25,6 +31,8 @@ flowchart LR
     User["Browser"] --> Work["EAAF Work"]
     Work -->|"Chat and document search"| Core["EAAF Core Gateway"]
     DevOps["EAAF DevOps CLI"] -->|"Optional architecture drafting"| Core
+    ECS["AWS ECS or saved exports"] --> Ops["EAAF Ops CLI"]
+    Ops -->|"Optional incident explanation"| Core
     Core --> LiteLLM["LiteLLM Proxy"]
     LiteLLM --> Model["Local mock or configured provider"]
     DevOps -->|"Terraform module call and inputs"| Demo["Deployment Demo"]
@@ -35,6 +43,7 @@ flowchart LR
 | [EAAF Core](https://github.com/tandrian06/eaaf) | Shared model access and governance. It currently provides department document retrieval for Work. |
 | [EAAF Work](https://github.com/tandrian06/eaaf-work) | Standalone chat and document-search portal. Work uses the scoped Chat and RAG API in Core. |
 | [EAAF DevOps](https://github.com/tandrian06/eaaf-devops) | Reusable architecture intake, validation, and Terraform generation. Drafting from text can use the EAAF Gateway. |
+| [EAAF Ops](https://github.com/tandrian06/eaaf-ops) | Read-only ECS evidence collection and incident diagnosis. |
 | [EAAF Deployment Demo](https://github.com/tandrian06/eaaf-deployment-demo) | Example architecture, prepared Terraform module, generation workflow, and optional AWS deployment. |
 
 ## Portal source

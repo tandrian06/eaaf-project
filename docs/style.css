@@ -32,7 +32,7 @@ p{margin:.7rem 0 1rem}
 .domains,.repositories{padding-top:3.6rem}
 .domain-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem;margin-top:1.2rem}
 .domain{grid-column:span 2;padding:1.35rem;background:white;border:1px solid var(--line);border-radius:10px}
-.domain.featured{grid-column:span 3;border-top:3px solid var(--accent)}
+.domain.featured{border-top:3px solid var(--accent)}
 .domain p,.repositories p,.repositories li span,.footer{color:var(--muted)}
 .repositories ul{list-style:none;padding:0;margin:1.1rem 0 3rem;border-top:1px solid var(--line)}
 .repositories li{padding:.85rem 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:.5rem 1.5rem;flex-wrap:wrap}
