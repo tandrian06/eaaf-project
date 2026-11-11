@@ -24,7 +24,7 @@ p{margin:.7rem 0 1rem}
 .core{display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:1.5rem 2.5rem;padding:clamp(1.5rem,5vw,3rem);background:var(--dark);color:white;border-radius:14px}
 .core p{color:#d4e1f3}
 .core a{color:#b6c9ff}
-.label,.status{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 .6rem}
+.label{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:0 0 .6rem}
 .capabilities{display:flex;flex-wrap:wrap;gap:.55rem;list-style:none;padding:0;margin:0}
 .capabilities li{border:1px solid #536883;border-radius:7px;padding:.32rem .62rem;color:#e6efff}
 .domains,.repositories{padding-top:3.6rem}
@@ -32,7 +32,6 @@ p{margin:.7rem 0 1rem}
 .domain{grid-column:span 2;padding:1.35rem;background:white;border:1px solid var(--line);border-radius:10px}
 .domain.featured{grid-column:span 3;border-top:3px solid var(--accent)}
 .domain p,.repositories p,.repositories li span,.footer{color:var(--muted)}
-.domain .status{color:#405682}
 .repositories ul{list-style:none;padding:0;margin:1.1rem 0 3rem;border-top:1px solid var(--line)}
 .repositories li{padding:.85rem 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:.5rem 1.5rem;flex-wrap:wrap}
 .footer{border-top:1px solid var(--line);font-size:.9rem}
