@@ -28,8 +28,8 @@ Replay saved ECS events to see why a container could not start or why a task ran
 
 ```mermaid
 flowchart LR
-    User["Browser"] --> Work["EAAF Work"]
-    Work -->|"Chat and document search"| Core["EAAF Core Gateway"]
+    User["Browser"] --> Work["EAAF Work · Chat and department RAG"]
+    Work -->|"Authentication, generation, and embeddings"| Core["EAAF Core Gateway"]
     DevOps["EAAF DevOps CLI"] -->|"Optional architecture drafting"| Core
     ECS["AWS ECS or saved exports"] --> Ops["EAAF Ops CLI"]
     Ops -->|"Optional incident explanation"| Core
@@ -40,8 +40,8 @@ flowchart LR
 
 | Repository | Responsibility |
 | --- | --- |
-| [EAAF Core](https://github.com/tandrian06/eaaf) | Shared model access and governance. It currently provides department document retrieval for Work. |
-| [EAAF Work](https://github.com/tandrian06/eaaf-work) | Standalone chat and document-search portal. Work uses the scoped Chat and RAG API in Core. |
+| [EAAF Core](https://github.com/tandrian06/eaaf) | Shared model access, application authentication, and governance. |
+| [EAAF Work](https://github.com/tandrian06/eaaf-work) | Chat portal, department documents, and retrieval. Work uses Core for authentication and model calls. |
 | [EAAF DevOps](https://github.com/tandrian06/eaaf-devops) | Reusable architecture intake, validation, and Terraform generation. Drafting from text can use the EAAF Gateway. |
 | [EAAF Ops](https://github.com/tandrian06/eaaf-ops) | Read-only ECS evidence collection and incident diagnosis. |
 | [EAAF Deployment Demo](https://github.com/tandrian06/eaaf-deployment-demo) | Example architecture, prepared Terraform module, generation workflow, and optional AWS deployment. |
