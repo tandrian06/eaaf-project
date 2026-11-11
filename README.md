@@ -10,7 +10,7 @@ EAAF gives enterprise applications a shared way to call AI models under their ow
 
 Open the local chat portal and try the Global, HR, IT, and Marketing spaces. Department chat can retrieve excerpts from fictional documents and show the sources alongside the answer. Docker Compose runs the demo with a simulated provider. OpenAI is optional.
 
-[Run Chat and RAG locally](https://github.com/tandrian06/eaaf#readme)
+[Run Chat and RAG locally](https://github.com/tandrian06/eaaf-work#readme)
 
 ### AI for DevOps · Architecture to Terraform
 
@@ -20,9 +20,20 @@ Start with a reviewed YAML description of one HTTP container. The DevOps CLI rea
 
 ## How the repositories fit together
 
+```mermaid
+flowchart LR
+    User["Browser"] --> Work["EAAF Work"]
+    Work -->|"Chat and document search"| Core["EAAF Core Gateway"]
+    DevOps["EAAF DevOps CLI"] -->|"Optional architecture drafting"| Core
+    Core --> LiteLLM["LiteLLM Proxy"]
+    LiteLLM --> Model["Local mock or configured provider"]
+    DevOps -->|"Terraform module call and inputs"| Demo["Deployment Demo"]
+```
+
 | Repository | Responsibility |
 | --- | --- |
-| [EAAF Core](https://github.com/tandrian06/eaaf) | Shared model access and governance. It currently also hosts the local Chat and RAG demo. |
+| [EAAF Core](https://github.com/tandrian06/eaaf) | Shared model access and governance. It currently provides department document retrieval for Work. |
+| [EAAF Work](https://github.com/tandrian06/eaaf-work) | Standalone chat and document-search portal. Work uses the scoped Chat and RAG API in Core. |
 | [EAAF DevOps](https://github.com/tandrian06/eaaf-devops) | Reusable architecture intake, validation, and Terraform generation. Drafting from text can use the EAAF Gateway. |
 | [EAAF Deployment Demo](https://github.com/tandrian06/eaaf-deployment-demo) | Example architecture, prepared Terraform module, generation workflow, and optional AWS deployment. |
 
