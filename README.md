@@ -8,7 +8,7 @@ EAAF gives enterprise applications a shared way to call AI models under their ow
 
 ### AI for Work · Chat and document search
 
-Open the local chat portal and try the Global, HR, IT, and Marketing spaces. Department chat can retrieve excerpts from fictional documents and show the sources alongside the answer. Docker Compose runs the demo with a simulated provider. OpenAI is optional.
+Open the local chat portal and try the Global, HR, IT, and Marketing spaces. Department chat can retrieve excerpts from fictional documents and show the sources alongside the answer. Docker Compose runs the demo with a simulated provider. OpenAI is optional. The HR demo can also use Claude through the Anthropic overlay.
 
 [Run Chat and RAG locally](https://github.com/tandrian06/eaaf-work#readme)
 
@@ -38,7 +38,9 @@ flowchart LR
     ECS["AWS ECS or saved exports"] --> Ops["EAAF Ops CLI"]
     Ops -->|"Optional incident explanation"| Core
     Core --> LiteLLM["LiteLLM Proxy"]
-    LiteLLM --> Model["Local mock or configured provider"]
+    LiteLLM --> Mock["Local mock"]
+    LiteLLM -.-> OpenAI["OpenAI · optional"]
+    LiteLLM -.-> Claude["Anthropic · Claude · optional"]
     DevOps -->|"Terraform module call and inputs"| Demo["Deployment Demo"]
 ```
 
