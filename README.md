@@ -24,6 +24,10 @@ Replay saved ECS events to see why a container could not start or why a task ran
 
 [Try AI for Ops locally](https://github.com/tandrian06/eaaf-ops#readme)
 
+### EAAF Core on AWS · Deployment PoC
+
+Run the Governance Gateway, LiteLLM, and the mock provider together in one Fargate task with ephemeral SQLite. EAAF Work runs locally and reaches Core through an AWS Session Manager tunnel. The PoC verified an authorized HR request, authentication and authorization denials, quota enforcement, and audit metadata. The repository contains Terraform, IAM examples, and the deployment guide. [EAAF Core AWS PoC](https://github.com/tandrian06/eaaf-core-aws-poc) **(private · GitHub access required)**.
+
 ## How the repositories fit together
 
 ```mermaid
