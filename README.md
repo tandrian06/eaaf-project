@@ -30,19 +30,9 @@ Run the Governance Gateway, LiteLLM, and the mock provider together in one Farga
 
 ## How the repositories fit together
 
-```mermaid
-flowchart LR
-    User["Browser"] --> Work["EAAF Work · Chat and department RAG"]
-    Work -->|"Authentication, generation, and embeddings"| Core["EAAF Core Gateway"]
-    DevOps["EAAF DevOps CLI"] -->|"Optional architecture drafting"| Core
-    ECS["AWS ECS or saved exports"] --> Ops["EAAF Ops CLI"]
-    Ops -->|"Optional incident explanation"| Core
-    Core --> LiteLLM["LiteLLM Proxy"]
-    LiteLLM --> Mock["Local mock"]
-    LiteLLM -.-> OpenAI["OpenAI · optional"]
-    LiteLLM -.-> Claude["Anthropic · Claude · optional"]
-    DevOps -->|"Terraform module call and inputs"| Demo["Deployment Demo"]
-```
+[![EAAF architecture showing Work, Ops, and DevOps connected to the Core Gateway and its model providers](docs/architecture-overview.svg)](docs/architecture-overview.svg)
+
+[Mermaid source](docs/architecture-overview.mmd)
 
 | Repository | Responsibility |
 | --- | --- |
