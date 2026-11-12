@@ -16,7 +16,7 @@ Open the local chat portal and try the Global, HR, IT, and Marketing spaces. Dep
 
 Start with a reviewed YAML description of one HTTP container. The DevOps CLI reads the inputs and outputs of a prepared Terraform module, then generates the module call and its input values. You can validate the result locally. The deployment example adds a generated pull request and an optional AWS Fargate deployment.
 
-[Explore the DevOps generator](https://github.com/tandrian06/eaaf-devops#readme) · [View the deployment example](https://github.com/tandrian06/eaaf-deployment-demo#readme) (GitHub access required while this repository is private)
+[Explore the DevOps generator](https://github.com/tandrian06/eaaf-devops#readme) · [View the deployment example](https://github.com/tandrian06/eaaf-deployment-demo#readme) **(private · GitHub access required)**
 
 ### AI for Ops · ECS incident diagnosis
 
@@ -44,7 +44,9 @@ flowchart LR
 | [EAAF Work](https://github.com/tandrian06/eaaf-work) | Chat portal, department documents, and retrieval. Work uses Core for authentication and model calls. |
 | [EAAF DevOps](https://github.com/tandrian06/eaaf-devops) | Reusable architecture intake, validation, and Terraform generation. Drafting from text can use the EAAF Gateway. |
 | [EAAF Ops](https://github.com/tandrian06/eaaf-ops) | Read-only ECS evidence collection and incident diagnosis. |
-| [EAAF Deployment Demo](https://github.com/tandrian06/eaaf-deployment-demo) | Example architecture, prepared Terraform module, generation workflow, and optional AWS deployment. |
+| [EAAF Deployment Demo](https://github.com/tandrian06/eaaf-deployment-demo) **(private · GitHub access required)** | Example architecture, prepared Terraform module, generation workflow, and optional AWS deployment. |
+
+GitHub returns HTTP 404 for the private deployment demo when your account does not have access.
 
 ## Portal source
 
